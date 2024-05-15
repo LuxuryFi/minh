@@ -3,15 +3,15 @@
 
  Source Server         : test
  Source Server Type    : MySQL
- Source Server Version : 80200 (8.2.0)
+ Source Server Version : 80400 (8.4.0)
  Source Host           : localhost:3306
- Source Schema         : test123
+ Source Schema         : minh
 
  Target Server Type    : MySQL
- Target Server Version : 80200 (8.2.0)
+ Target Server Version : 80400 (8.4.0)
  File Encoding         : 65001
 
- Date: 26/02/2024 15:06:50
+ Date: 15/05/2024 11:18:55
 */
 
 SET NAMES utf8mb4;
@@ -37,7 +37,7 @@ CREATE TABLE `brands`  (
 -- Records of brands
 -- ----------------------------
 INSERT INTO `brands` VALUES (3, 'NXB Kim Dong', '0966141566', 'Cau Giay- Ha Noi', 'To Tan Loc', 'Deactive', '2023-04-22 02:49:02', '2023-05-13 15:26:09');
-INSERT INTO `brands` VALUES (4, 'NXB Phuong Nam', '0467532198', 'Minhng Mai- Ha Noi', 'Nguyen Van Tai', 'Active', '2023-04-22 02:49:02', NULL);
+INSERT INTO `brands` VALUES (4, 'NXB Phuong Nam', '0467532198', 'Hoang Mai- Ha Noi', 'Nguyen Van Tai', 'Active', '2023-04-22 02:49:02', NULL);
 INSERT INTO `brands` VALUES (5, 'NXB Nha Nam', '19001265', 'Thanh pho Ho Chi Minh', 'Bui Phuong Thanh', 'Active', '2023-04-22 02:49:02', NULL);
 INSERT INTO `brands` VALUES (6, 'NXB Tri Viet ', '1234987601', 'Thanh Pho Ho Chi Minh', 'Bui Le Phuong', 'Active', '2023-04-22 02:49:02', NULL);
 INSERT INTO `brands` VALUES (7, 'NXB Penguin Random House', '088812567', 'Australian', 'Jolie', 'Active', '2023-04-22 02:49:02', NULL);
@@ -131,9 +131,9 @@ CREATE TABLE `customers`  (
 -- ----------------------------
 -- Records of customers
 -- ----------------------------
-INSERT INTO `customers` VALUES (16, '12312', '312', '3123', NULL, 1, 31231231, 'img/1680082858-ancolor.png', '$2b$10$AxU9rCu4pkRuCH3OL08htu5SId8J0PQ/INwVpo7S7CktUJ1Li4Wku', '2023-03-29 09:40:55', '2023-03-29 09:43:53', 'Minh', NULL, NULL, NULL, 'female');
-INSERT INTO `customers` VALUES (18, 'Huy Minh', 'Huy', 'Minh', NULL, 0, 2147483647, 'img/male.jpg', '$2b$10$AxU9rCu4pkRuCH3OL08htu5SId8J0PQ/INwVpo7S7CktUJ1Li4Wku', '2023-04-19 10:16:30', '2023-05-13 17:23:56', 'Minh1@gmail.com', NULL, NULL, NULL, 'Male');
-INSERT INTO `customers` VALUES (19, '', '312', '3123123', NULL, 0, 2147483647, 'img/male.jpg', '$2b$10$AxU9rCu4pkRuCH3OL08htu5SId8J0PQ/INwVpo7S7CktUJ1Li4Wku', '2023-04-28 15:54:44', NULL, 'Minh@gmail.com', NULL, NULL, NULL, 'Male');
+INSERT INTO `customers` VALUES (16, '12312', '312', '3123', NULL, 1, 31231231, 'img/1680082858-ancolor.png', '$2b$10$AxU9rCu4pkRuCH3OL08htu5SId8J0PQ/INwVpo7S7CktUJ1Li4Wku', '2023-03-29 09:40:55', '2023-03-29 09:43:53', 'minh', NULL, NULL, NULL, 'female');
+INSERT INTO `customers` VALUES (18, 'Cong Minh', 'Minh', 'Cong', NULL, 0, 2147483647, 'img/male.jpg', '$2b$10$AxU9rCu4pkRuCH3OL08htu5SId8J0PQ/INwVpo7S7CktUJ1Li4Wku', '2023-04-19 10:16:30', '2023-05-13 17:23:56', 'minh@gmail.com', NULL, NULL, NULL, 'Male');
+INSERT INTO `customers` VALUES (19, '', '312', '3123123', NULL, 0, 2147483647, 'img/male.jpg', '$2b$10$AxU9rCu4pkRuCH3OL08htu5SId8J0PQ/INwVpo7S7CktUJ1Li4Wku', '2023-04-28 15:54:44', NULL, 'minh@gmail.com', NULL, NULL, NULL, 'Male');
 
 -- ----------------------------
 -- Table structure for details
@@ -315,7 +315,7 @@ CREATE TABLE `product_documents`  (
   INDEX `product_id`(`product_id` ASC) USING BTREE,
   CONSTRAINT `product_documents_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `product_documents_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 32 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 33 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of product_documents
@@ -336,6 +336,7 @@ INSERT INTO `product_documents` VALUES (27, NULL, 31, '1682261304-gangjpg.jpg', 
 INSERT INTO `product_documents` VALUES (28, NULL, 32, '1682263337-190423-6_1.jpg', 'jpg', '2023-04-23 09:15:54', NULL);
 INSERT INTO `product_documents` VALUES (29, NULL, 20, '1682263337-190423-6_1.jpg', 'jpg', '2023-05-11 22:17:14', NULL);
 INSERT INTO `product_documents` VALUES (31, NULL, 21, '1682188354-6.jfif', 'jfif', '2023-05-11 22:18:04', NULL);
+INSERT INTO `product_documents` VALUES (32, NULL, 33, '1715746607-429776152_2105217893187282_4833964181801606333_n.jpg', 'jpg', '2024-05-15 04:00:22', NULL);
 
 -- ----------------------------
 -- Table structure for product_votes
@@ -409,12 +410,12 @@ CREATE TABLE `products`  (
   CONSTRAINT `products_ibfk_2` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `products_ibfk_3` FOREIGN KEY (`supplier_id`) REFERENCES `suppliers` (`supplier_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `products_ibfk_4` FOREIGN KEY (`brand_id`) REFERENCES `brands` (`brand_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 33 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 34 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of products
 -- ----------------------------
-INSERT INTO `products` VALUES (17, NULL, 'a book on product design for users, helping readers better understand how product design works and how to improve user experience.', 4, '2023-04-22 02:49:02', NULL, 870000, 2, 'The Design of Everyday Things', NULL, NULL, NULL, 'NXB Phuong Nam', 'Minh Hoc Tro', NULL, NULL, 'Don Norman');
+INSERT INTO `products` VALUES (17, NULL, 'a book on product design for users, helping readers better understand how product design works and how to improve user experience.', 4, '2023-04-22 02:49:02', NULL, 870000, 2, 'The Design of Everyday Things', NULL, NULL, NULL, 'NXB Phuong Nam', 'Hoa Hoc Tro', NULL, NULL, 'Don Norman');
 INSERT INTO `products` VALUES (18, NULL, '“Character design for the new chapter.\r\n\r\nI discussed with Mr. Toriyama countless times before finally finalizing the image of Granola and Heeter, but in the end, the image of Monaito and the planet Sugar still had to rely on Mr. see at the end of this bo', 6, '2023-04-22 02:49:02', NULL, 50000, 0, 'Dragon Ball Super', NULL, NULL, NULL, 'NXB Kim Dong', 'BookStore Plus', NULL, NULL, 'Akira Toriyama, Toyotarou');
 INSERT INTO `products` VALUES (19, NULL, 'A magical novel about strange events in the history of a family in Morocco.', 3, '2023-04-22 02:49:02', NULL, 555000, 5, 'One Hundred Years of Solitude', NULL, NULL, NULL, 'NXB Nha Nam', 'Thai Ha Book', NULL, NULL, 'Gabriel Garcia Marquez');
 INSERT INTO `products` VALUES (20, NULL, 'Cookbooks are educational materials about the art of cooking and food preparation. These books can include instructions on how to choose ingredients, how to prepare and use cookware, recipes, how to prepare dishes from simple to complex, and how to garnis', 11, '2023-04-22 02:49:02', NULL, 70000, 4, 'How to Cook Everything', NULL, NULL, NULL, 'NXB Tri Viet ', 'Fahasa', NULL, NULL, 'Mark Bittman');
@@ -429,7 +430,8 @@ INSERT INTO `products` VALUES (28, NULL, 'Harry Potter has never even heard of H
 INSERT INTO `products` VALUES (29, NULL, 'The extraordinary #1 New York Times bestseller that has captivated over 1 million readers and inspired a movement to choose kind. I won\'t describe what I look like. Whatever you\'re thinking, it\'s probably worse. August Pullman was born with a facial diffe', 3, '2023-04-23 09:15:54', NULL, 168000, 1, 'Wonder', NULL, NULL, NULL, 'NXB Penguin Random House', 'Company TNHH Book Ha Giang', NULL, NULL, 'R J Palacio');
 INSERT INTO `products` VALUES (30, NULL, '\"Luke Pearson is one of the best cartoonists working today. Hilda is utterly brilliant!\"\r\n—Raina Telgemeier, creator of Smile\r\n\r\nThis brand new paperback edition of Hilda and the Troll offers a fresh chance to read the very first outing in Luke Pearson\'s ', 5, '2023-04-23 09:15:54', NULL, 190000, 1, 'Hilda and the troll', NULL, NULL, NULL, 'NXB Nha Nam', 'Book Point', NULL, NULL, 'Luke Pearson');
 INSERT INTO `products` VALUES (31, NULL, 'Gangsta Granny\r\n\r\nAnother hilarious and moving novel from bestselling, critically acclaimed author David Walliams, the natural successor to Roald Dahl. A story of prejudice and acceptance, funny lists and silly words, this new book has all the hallmarks o', 13, '2023-04-23 09:15:54', NULL, 130000, 1, 'Gangsta Granny', NULL, NULL, NULL, 'Tre Publishing House', 'Cambridge University Press', NULL, NULL, 'David Walliams');
-INSERT INTO `products` VALUES (32, NULL, 'aaaaaaaaa', 3, '2023-04-23 09:15:54', NULL, 0, 1, 'aaaaaaaa1', NULL, NULL, NULL, 'NXB Nha Nam', 'Minh Hoc Tro', NULL, NULL, 'aaaaaa');
+INSERT INTO `products` VALUES (32, NULL, 'aaaaaaaaa', 3, '2023-04-23 09:15:54', NULL, 0, 1, 'aaaaaaaa1', NULL, NULL, NULL, 'NXB Nha Nam', 'Hoa Hoc Tro', NULL, NULL, 'aaaaaa');
+INSERT INTO `products` VALUES (33, NULL, '3213', 6, '2024-05-15 04:00:22', NULL, 312, 0, '321', NULL, NULL, NULL, 'Tre Publishing House', 'BookStore Plus', NULL, NULL, '3123');
 
 -- ----------------------------
 -- Table structure for promotions
@@ -515,13 +517,13 @@ CREATE TABLE `suppliers`  (
 -- ----------------------------
 -- Records of suppliers
 -- ----------------------------
-INSERT INTO `suppliers` VALUES (1, 'Rule 1', '', '096614156', 'Minhng Tuan Hai', 'Active', '2023-03-28 15:09:16', '2023-05-13 15:27:18');
+INSERT INTO `suppliers` VALUES (1, 'Rule 1', '', '096614156', 'Hoang Tuan Hai', 'Active', '2023-03-28 15:09:16', '2023-05-13 15:27:18');
 INSERT INTO `suppliers` VALUES (2, '312', '', '3123', '123', '312', '2023-03-28 15:09:16', NULL);
 INSERT INTO `suppliers` VALUES (3, 'Fahasa', '', '190006543', 'Chu Thi Thuy', 'Active', '2023-04-22 02:49:02', NULL);
 INSERT INTO `suppliers` VALUES (4, 'BookStore Plus', '', '099992134', 'Bui Phuong Le', 'Active', '2023-04-22 02:49:02', NULL);
 INSERT INTO `suppliers` VALUES (5, 'Thai Ha Book', '', '077775436', 'LongBQ', 'Active', '2023-04-22 02:49:02', NULL);
 INSERT INTO `suppliers` VALUES (6, 'Vina Book', '', '0111169872', 'Thanh Phuong ', 'Active', '2023-04-22 02:49:02', NULL);
-INSERT INTO `suppliers` VALUES (7, 'Minh Hoc Tro', '', '087694532', 'Ngo Khanh Minh', 'Active', '2023-04-22 02:49:02', NULL);
+INSERT INTO `suppliers` VALUES (7, 'Hoa Hoc Tro', '', '087694532', 'Ngo Khanh Hoa', 'Active', '2023-04-22 02:49:02', NULL);
 INSERT INTO `suppliers` VALUES (8, 'Nhan Tri Viet BookStore', '', '0769341221', 'Chi Le', 'Active', '2023-04-22 02:49:02', NULL);
 INSERT INTO `suppliers` VALUES (11, 'Random House', '', '0987364132', 'HienDTT', 'Active', '2023-04-23 09:15:54', NULL);
 INSERT INTO `suppliers` VALUES (12, 'Book Point', '', '06472945192', 'ThuyTT', 'Active', '2023-04-23 09:15:54', NULL);
@@ -640,7 +642,7 @@ CREATE TABLE `users`  (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (15, 'Minh huy', 'huy', 'Minh', NULL, 0, 966141598, 'img/1679389121-1663922085-clinic-289974754_199470302406974_1479188202197616939_n.jpg', '$2b$10$AxU9rCu4pkRuCH3OL08htu5SId8J0PQ/INwVpo7S7CktUJ1Li4Wku', 2, '2023-03-21 08:57:26', NULL, 'hien', NULL, NULL, NULL, 'female');
+INSERT INTO `users` VALUES (15, 'cong minh', 'minh', 'cong', NULL, 0, 966141598, 'img/1679389121-1663922085-clinic-289974754_199470302406974_1479188202197616939_n.jpg', '$2b$10$AxU9rCu4pkRuCH3OL08htu5SId8J0PQ/INwVpo7S7CktUJ1Li4Wku', 2, '2023-03-21 08:57:26', NULL, 'minh', NULL, NULL, NULL, 'female');
 INSERT INTO `users` VALUES (19, '312312', '231', '2312', NULL, 0, 312312, 'img/female.jpg', '$2b$10$AxU9rCu4pkRuCH3OL08htu5SId8J0PQ/INwVpo7S7CktUJ1Li4Wku', 1, '2023-05-13 15:21:02', NULL, 'hien123', NULL, NULL, NULL, 'female');
 INSERT INTO `users` VALUES (20, 'data.full_name', 'data.first_name', 'data.last_name', NULL, 0, 312312321, 'img/male.jpg', '$2b$10$AxU9rCu4pkRuCH3OL08htu5SId8J0PQ/INwVpo7S7CktUJ1Li4Wku', 2, '2024-02-26 07:02:43', NULL, 'data.username', NULL, NULL, NULL, 'data.gender');
 INSERT INTO `users` VALUES (21, 'data.full_name', 'data.first_name', 'data.last_name', NULL, 0, 312312321, 'img/male.jpg', '$2b$10$AxU9rCu4pkRuCH3OL08htu5SId8J0PQ/INwVpo7S7CktUJ1Li4Wku', 2, '2024-02-26 07:02:43', NULL, 'data.username1', NULL, NULL, NULL, 'data.gender');
