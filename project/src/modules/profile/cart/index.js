@@ -77,7 +77,7 @@ export default function Cart() {
               <img
                 alt="cover book"
                 className="img"
-                src={`${process.env.REACT_APP_API_URL}/documents/${item.product.documents[0].document}`}
+                src={`http://localhost:3001/documents/${item.product.documents[0].document}`}
               />
               <h3 className="name">{item.product.title}</h3>
               <h4 className="price">₫{item.product.price}</h4>

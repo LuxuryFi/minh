@@ -21,7 +21,7 @@ router.get('/project/customer/:email', customerController.getOneCustomer);
 
 router.put('/project/customer', uploadAvatar.single('avatar'), customerController.updateCustomer);
 
-router.put('/project/customer/password', validator(customerPasswordSchema), customerController.updateCustomerPassword);
+router.put('/project/customer/password', isAuthenticated, customerController.updateCustomerPassword);
 
 router.post('/project/customer',uploadAvatar.single('avatar'), customerController.createCustomer);
 

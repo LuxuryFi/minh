@@ -165,14 +165,16 @@ exports.updateCustomerPassword = async (req, res) => {
   try {
     const data = req.body;
     const hashedPassword = await generateHashPassword(data.password);
-
+  
+    // console.log(data);
+    // console.log('test', req.user)
     const updateData = {
       password: hashedPassword,
     }
 
     const result = await Customer.update(updateData, {
       where: {
-        email: data.email
+        email: req.user.email
       }
     });
     if (result) {

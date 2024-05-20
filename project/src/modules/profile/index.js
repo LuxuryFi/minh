@@ -28,7 +28,7 @@ export default function MyProfile() {
                     className="avatar"
                     src={
                       Object.keys(currentUser).length > 0
-                        ? `${process.env.REACT_APP_API_URL}/${currentUser.avatar[0].url}`
+                        ? `http://localhost:3001/${currentUser.avatar[0].url}`
                         : ""
                     }
                     alt="avatar"

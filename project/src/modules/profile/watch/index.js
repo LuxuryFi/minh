@@ -40,7 +40,7 @@ export default function Watch() {
       dataIndex: 'product.documents.document',
       width: '20%',
       height: '100',
-      render: Product_Image => <img style={{ width: '50%'}} alt={Product_Image} src={`${process.env.REACT_APP_API_URL}/documents/${Product_Image}`} />
+      render: Product_Image => <img style={{ width: '50%'}} alt={Product_Image} src={`http://localhost:3001/documents/${Product_Image}`} />
     },
     {
       title: 'Created Date',

@@ -8,6 +8,7 @@ exports.getImport = async (req, res) => {
     const result = await Import.findAll();
     if (result) {
       logger.info('Import list', {importProduct: result});
+      console.log(result);
       return response.respondOk(res, result);
     }
     return response.respondInternalServerError(res, [customMessages.errors.importProductNotFound]);
@@ -20,7 +21,7 @@ exports.getImport = async (req, res) => {
 exports.createImport = async (req, res) => {
   try {
     const data = req.body;
-    console.log(data);
+    console.log('datadatadata', data);
     const importProduct = await Import.create(data);
     if (importProduct) {
       logger.info('Import created success', { importProduct });
@@ -47,6 +48,7 @@ exports.createImport = async (req, res) => {
     return response.respondInternalServerError(res, [customMessages.errors.internalError]);
   } catch (err) {
     logger.error('Import create failed', err);
+    console.log(err);
     return response.respondInternalServerError(res, [customMessages.errors.internalError]);
   }
 }

@@ -114,7 +114,7 @@ export default function BookDetail() {
                     src={
                       bookNeedUpdate.documents &&
                       bookNeedUpdate.documents.length > 0
-                        ? `${process.env.REACT_APP_API_URL}/documents/${bookNeedUpdate.documents[0].document}`
+                        ? `http://localhost:3001/documents/${bookNeedUpdate.documents[0].document}`
                         : "https://img.freepik.com/free-vector/blank-book-cover-white-vector-illustration_1284-41903.jpg?w=360"
                     }
                     alt="current product"
@@ -127,7 +127,7 @@ export default function BookDetail() {
                           key={src.document + index}
                           className="image-item"
                           alt="remain img current"
-                          src={`${process.env.REACT_APP_API_URL}/documents/${src.document}`}
+                          src={`http://localhost:3001/documents/${src.document}`}
                         />
                       ))}
                   </div>
@@ -341,7 +341,7 @@ export default function BookDetail() {
                       >
                         <img
                           alt="avatar"
-                          src={`${process.env.REACT_APP_API_URL}/${item.avatar}`}
+                          src={`http://localhost:3001/${item.avatar}`}
                           className="avatar"
                         ></img>
                         <div className="comment-content">
