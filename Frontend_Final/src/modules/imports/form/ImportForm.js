@@ -271,10 +271,10 @@ function ImportForm({ mode }) {
     formData.append("price", importt.price);
     formData.append("amount", importt.amount);
     formData.append("description", importt.description);
-    formData.append("import_id", importt.import_id);
-    formData.append("amount", importt.amount);
     formData.append("product_id", importt.product_id);
     formData.append("supplier_id", importt.supplier_id);
+
+    console.log(formData);
     if (mode === "create") {
       axiosClient
         .post(`http://localhost:3001/project/import`, formData)

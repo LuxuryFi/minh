@@ -21,6 +21,7 @@ export default function Input({ config, onChange }) {
       name: target.name,
       value: target.value,
     };
+
     onChange(newData);
   };
 
@@ -39,7 +40,7 @@ export default function Input({ config, onChange }) {
       name={config.name}
       accept={config.accept}
       disabled={config.disabled}
-      required={config.required}
+      required={true}
       hidden={config.hidden}
       checked={config.checked}
       multiple={config.multiple}
