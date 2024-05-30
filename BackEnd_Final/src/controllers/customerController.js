@@ -75,7 +75,7 @@ exports.createCustomer = async (req, res) => {
     const data = req.body;
     const hashedPassword = await generateHashPassword(data.password);
     const payload = {
-      email: data.email,
+      email: data.username,
       full_name: data.full_name,
       last_name:  data.last_name,
       first_name: data.first_name,
@@ -97,7 +97,7 @@ exports.createCustomer = async (req, res) => {
 
     const checkCustomernameExist = await Customer.findOne({
       where: {
-        email: data.email,
+        email: data.username,
       }
     })
 
@@ -111,7 +111,7 @@ exports.createCustomer = async (req, res) => {
     if (result) {
       const sendEmail = await emailService.sendEmail({
         password: data.password,
-        email: data.email,
+        email: data.username,
         email_slug: EMAIL_SLUGS.ACCOUNT_CREATED,
       });
 
@@ -146,7 +146,7 @@ exports.updateCustomer = async (req, res) => {
     }
     const result = await Customer.update(updateData, {
       where: {
-        email: data.email
+        email: data.username
       }
     });
     if (result) {
