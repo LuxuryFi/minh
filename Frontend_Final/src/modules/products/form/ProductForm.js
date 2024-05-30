@@ -131,6 +131,20 @@ function ProductForm({ mode }) {
     required,
     checked
   ) => {
+    console.log('test',{
+      id: id,
+      className: className,
+      name: nameAtt,
+      type: type,
+      value: value,
+      placeholder: placeholder,
+      accept: accept,
+      disabled: disabled,
+      multiple: multiple,
+      hidden: hidden,
+      required: required,
+      checked: checked,
+    } )
     return {
       id: id,
       className: className,
@@ -185,9 +199,13 @@ function ProductForm({ mode }) {
                 "",
                 "",
                 "*",
-                true,
                 false,
-                true
+                false,
+                false,
+                false,
+                false,
+                false,
+
               )}
             />
           </label>

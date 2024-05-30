@@ -8,12 +8,10 @@ import styles from "./CustomerForm.module.css";
 import Input from "../../../component/input/Input";
 import Button from "../../../component/button/Button";
 import Spinner from "../../../component/spinner/Spinner";
-import Select from "../../../component/select/Select";
-import { ROLES } from "../../../constants";
+
 
 function CustomerForm({ mode }) {
   const navigate = useNavigate();
-  const currentCustomer = JSON.parse(localStorage.getItem("currentCustomer"));
   const { username } = useParams();
   const [customer, setCustomer] = useState(null);
   const [preview, setPreview] = useState();
@@ -55,8 +53,8 @@ function CustomerForm({ mode }) {
     accept,
     disabled,
     hidden,
-    required = false,
-    checked = false
+    required,
+    checked
   ) => {
     return {
       id: id,
@@ -311,7 +309,13 @@ function CustomerForm({ mode }) {
               "file",
               "",
               "",
-              "image/*"
+              "image/*",
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
             )}
           />
         </div>

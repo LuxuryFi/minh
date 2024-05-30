@@ -24,7 +24,8 @@ export default function LoginForm() {
     type,
     value,
     placeholder,
-    checked
+    checked,
+    required
   ) => {
     return {
       id: id,
@@ -34,6 +35,7 @@ export default function LoginForm() {
       value: value,
       placeholder: placeholder,
       checked: checked,
+      required: required
     };
   };
 
@@ -171,7 +173,13 @@ export default function LoginForm() {
                         "checkbox",
                         remember,
                         undefined,
-                        remember
+                        remember,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
                       )}
                     />
                     <span>Remember me</span>

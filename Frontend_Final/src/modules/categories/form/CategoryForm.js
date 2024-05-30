@@ -11,7 +11,6 @@ import { ROLES } from "../../../constants";
 function CategoryForm({ mode }) {
   const navigate = useNavigate();
   const { cateId } = useParams();
-  const [department, setDepartment] = useState([]);
   const [category, setCategory] = useState(null);
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 

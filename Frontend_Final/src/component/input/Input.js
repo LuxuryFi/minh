@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "./Input.module.css";
 
 export default function Input({ config, onChange }) {
@@ -22,8 +22,13 @@ export default function Input({ config, onChange }) {
       value: target.value,
     };
 
+    
     onChange(newData);
   };
+  let required = true;
+    if (config?.required === false) {
+      required = false;
+    }
 
   // if (config.type === "checkbox") {
   //   return <div className={clsx(styles.checkboxItems)}></div>;
@@ -40,7 +45,7 @@ export default function Input({ config, onChange }) {
       name={config.name}
       accept={config.accept}
       disabled={config.disabled}
-      required={true}
+      required={required}
       hidden={config.hidden}
       checked={config.checked}
       multiple={config.multiple}

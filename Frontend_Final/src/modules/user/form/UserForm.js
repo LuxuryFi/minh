@@ -61,9 +61,23 @@ function UserForm({ mode }) {
     accept,
     disabled,
     hidden,
-    required = false,
+    required ,
     checked = false
   ) => {
+
+    console.log('test',  {
+      id: id,
+      className: className,
+      name: nameAtt,
+      type: type,
+      value: value,
+      placeholder: placeholder,
+      accept: accept,
+      disabled: disabled,
+      hidden: hidden,
+      required: required,
+      checked: checked,
+    })
     return {
       id: id,
       className: className,
@@ -356,7 +370,11 @@ function UserForm({ mode }) {
               "file",
               "",
               "",
-              "image/*"
+              "image/*",
+              false,
+              false,
+              false,
+              false,
             )}
           />
         </div>
